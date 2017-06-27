@@ -1,15 +1,15 @@
 # Site settings
-title: Life Log
+title: 효진의 블로그입니다
 header-img: img/home-bg.jpg
 email: hyojin03131995@gmail.com
-copyright_name: Your/Project/Corporate Name
+copyright_name: kimcats0313
 description: "Write your site description here. It will be used as your sites meta description as well!"
 baseurl: ""
 url: "http://yourdomain.com"
-twitter_username: kimcats0313
+twitter_username: kimcat0313
 github_username:  kimhyojin
-facebook_username:  hyojin0313
-email_username:  hyojin03131995@gmail.com
+facebook_username: hyojin0313
+email_username:   hyojin03131995@gmail.com
 
 # Google Analytics
 # To enable google analytics, uncomment below line with a valid Google Tracking ID
@@ -20,7 +20,6 @@ markdown: kramdown
 highlighter: rouge
 permalink: pretty
 paginate: 5
-paginate_path: "/blog/page:num/"
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
 gems: [jekyll-paginate, jekyll-feed]
