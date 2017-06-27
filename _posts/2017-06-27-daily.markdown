@@ -13,6 +13,8 @@ header-img: "img/post-bg-01.jpg"
 * 사진으로 리스트업 하는 페이지 제작 : 코니카팝과 니콘과 함께 찍은 사진, 모모 무무 사진, 그리고 간단한 글 작성(참고 : <http://jekyllthemes.org/themes/folio/>)
 * SNS에 글 공유하는 기능 추가 : 인스타그램과 페이스북
 * 짧게 쓰는 글들 리스트업 페이지 제작 : 트위터처럼 글자 수 제한을 두고, 페이지를 따로 두기보다는 메인에서 확인. 어떻게 보여줄까?
-* 카테고리와 태그 기능 추가 (참고 : https://www.mikeapted.com/jekyll/2015/12/30/category-and-tag-archives-in-jekyll-no-plugins/)
+* 카테고리와 태그 기능 추가 (참고 : <https://www.mikeapted.com/jekyll/2015/12/30/category-and-tag-archives-in-jekyll-no-plugins/>)
 
 <p>짧게 쓰는 글들을 어떻게 보여줄 지 생각해야겠다. 피드형식으로 보여주면 좋을 거같은데(나도 그게 편하고) 흠.. 차라리 메모장처럼 디자인을 해서 메모장에 적히는 것처럼 해서 올릴까? 이건 좀 더 고민해봐야겠다. 어째뜬 제주도 멋있다!</p>
+
+<p>아 참고로 이 블로그 테마는 요기서 가지고 왔습니다. Clean Blog 제작자님의 노고에 축배를!</p>
