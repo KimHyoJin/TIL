@@ -1,0 +1,26 @@
+---
+layout:     page
+title:      MOVIE
+description:  영화보는 것을 좋아합니다 :) </br> 가끔 맘에 드는 영화 리뷰를 남깁니다
+---
+
+{% for post in site.posts %}
+{% if post.categories contains "MOVIE" %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">            
+        {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+    </a>
+    <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
+</div>
+<hr>
+{% endif %}
+{% endfor %}
+
+

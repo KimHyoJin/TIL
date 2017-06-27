@@ -1,0 +1,11 @@
+---
+layout:     post
+title:      "머리끈 모모"
+category:	cat
+subtitle:   "왜이렇게 머리끈을 좋아하는 거니?"
+date:       2017-06-24
+author:     "효징"
+header-img: "img/post-cat-01.jpg"
+---
+
+ 모모는 모든 종류의 머리끈을 좋아함..
