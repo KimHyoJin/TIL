@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Spring-MyBatis-MySQL(1)"
-date:   2017-07-12 04:00
-categories: {Spring, MySQL, Mybatis}
+date:   2017-07-12
+categories: Spring
 ---
 # 스프링과 데이터베이스 실습 - (1)
 
