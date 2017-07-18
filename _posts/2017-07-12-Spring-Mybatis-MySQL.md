@@ -155,6 +155,38 @@ public interface DemoMapper{
 (등록을 한다면 왜 @Autowired가 먹히지 않을까? Mapper의 역할은?)
 Mapper는 해당 Class가 Map임을 나타내기 위한 어노테이션이다. 그럼 Mapper Class를 통해 메소드를 사용하려면 어떻게 해야할까? 처음에는 @Autowired를 통해 빈을 찾아서 연결하려고 했는데, 동작은 되지만 등록된 빈이 없다고 자꾸 뜬다. @Component를 주면 해결이 된다. 어째뜬 쿼리문에 매핑된 메소드가 있으니 @Component를 통해 해결하는 게 맞을까..?!
 
+++ 수정(07.17)
+위에 질문을 한 이유는 다음의 것이 궁금해서였다.
+```JAVA
+public Class Mapper{
+  @insert
+  public void insert(query...)
+}
+```
+이런 Mapper가 있을 때 내가 insert를 사용하려면 DI를 통해서 주입해야한다. 이때
+1. 생성자를 통한 주입
+2. setter를 통한 주입
+3. @Autowird -> 이 경우는 미리 생성된 bean과 연결해주는 것이다.
+이때 3)을 사용하면
+```java
+@Autowired
+Mapper mapper;
+```
+이런식으로 사용하게 될텐데, 이 때 IntelliJ가 매칭되는 bean이 없다고 알려준다. 이것으로 인해 생긴 궁금증이었다
+
+해결은 다음과 같다.
+1) 이렇게 해결할 수 있다. 내가 참고한 [공식문서 예제](http://www.mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/#)의 경우에는 생성자를 이용해 주입한다.
+2) @Bean으로 설정하여 @Autowired한다.
+```java  
+@Bean
+public UserMapper userMapper() throws Exception {
+    SqlSessionTemplate sessionTemplate = new SqlSessionTemplate(sqlSessionFactory());
+    return sessionTemplate.getMapper(UserMapper.class);
+}
+```
+이런식으로 getMapper를 사용하여 Bean으로 등록한다.
+3) XML이 제일 마음이 편한 것같다...
+
 사실 annotation을 이용한 프로그래밍이 낯설다. 이게 어떻게 인식해서 동작하는 것일까 궁금하다(나중에 찾아봐야지). 그리고 이를 알아야 해결이 좀더 생각해서 고민해볼 수 있을 것같다. 주말에 annotation관련해서 조금 공부/정리를 해보고싶다.
 
 ##### Component를 두개 annotation하면 어떻게 동작할까?
