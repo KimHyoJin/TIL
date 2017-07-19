@@ -1,22 +1,21 @@
 # Site settings
-title: Project Pages
-description: "An Integrated Scientific Blogging Template"
-url: "https://projectpages.github.io"
+title: 효징의 블로그
+description: "어제보다 나은 내가 될 것이다!"
+url: "https://kimhyojin.github.io"
 
 
 
 
 # Secondary Parameters
-baseurl: "/project-pages"
 header-img: img/home-bg.jpg
 headercolor: "#FFFFFF"
-logo: /project-pages/img/logos/Project-Pages-New-Logo-Inverted.png
+logo: img/logos/Project-Pages-New-Logo-Inverted.png
 
 # Tertiary Parameters
-github_username:  projectpages
+github_username:  kimhyojin
 project_repository: project-pages
 disqus_shortname: project-pages
-g-analytics: UA-75881392-1
+g-analytics: 
 altmetric: true
 
 # Build settings
@@ -41,7 +40,7 @@ defaults:
 # Prose Settings
 prose:
   ignore: ['feed.xml', '/stl', '/ply', '/js', '/plugin', '/lib', '/projectors', '_layouts', '/_includes', 'Gruntfile.js', 'package.json', 'proselinks.jsonp', 'ppanchor.matin', '.gitignore', '/search', '/css', '/img', 'favicon.png','_data/*.json','LICENSES.md','README.md','colorscheme.scss','members.html','mentions.html','index.html']
-  siteurl: 'http://projectpages.github.io/project-pages/'
+  siteurl: 'http://kimhyojin.github.io/project-pages/'
   ispp: true
   media: 'img'
   metadata:
