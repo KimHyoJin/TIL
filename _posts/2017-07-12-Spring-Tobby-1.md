@@ -2,7 +2,8 @@
 layout: post
 title:  "Spring (2)"
 date:   2017-07-13 04:00
-categories: Spring
+category: Blog
+tags: 		spring 
 ---
 # 토비의 스프링 1장         
 
