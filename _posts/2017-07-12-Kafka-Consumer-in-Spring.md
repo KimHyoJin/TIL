@@ -2,7 +2,8 @@
 layout: post
 title:  "Kafka Consumer in Spring"
 date:   2017-07-17 22:00
-categories: Kafka
+category: Blog
+tags: 		spring Kafka
 ---
 # Spring에서 Kafka Consumer 구현하기
 

@@ -2,7 +2,8 @@
 layout: post
 title:  "IntelliJ Short Cut"
 date:   2017-07-12 04:00
-categories: IntelliJ
+category: Blog
+tags: 		IntelliJ
 ---
 # IntelliJ에서 단축키
 

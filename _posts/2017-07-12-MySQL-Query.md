@@ -2,7 +2,8 @@
 layout: post
 title:  "MySQL Query"
 date:   2017-07-12 22:00
-categories: MySQL
+category: Blog
+tags: 		MySQL
 ---
 # MySQL Query
 

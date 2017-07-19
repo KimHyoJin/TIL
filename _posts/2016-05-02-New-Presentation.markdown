@@ -4,6 +4,7 @@ title:     		New Presentation
 author:     	Ahmet Cecen
 tags:           presentation template
 subtitle:    	Some Short Description of Presentation
+published: false
 
 theme:		night # default/beige/blood/moon/night/serif/simple/sky/solarized
 trans:		default # default/cube/page/concave/zoom/linear/fade/none
@@ -25,7 +26,7 @@ vertical:		</section><section markdown="1">
 
 ## F11 to Fullscreen!
 
-Showcasing Presentation Features. This template is ideal for very quickly creating decent presentations when content and simplicity is more important than excessive styling. 
+Showcasing Presentation Features. This template is ideal for very quickly creating decent presentations when content and simplicity is more important than excessive styling.
 
 {{ page.horizontal }}
 
@@ -75,7 +76,7 @@ $$ A = \pi r^2 $$
 
 2. Item 2
 
-3. Item 
+3. Item
 
 {{ page.horizontal }}
 
