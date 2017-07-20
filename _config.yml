@@ -9,13 +9,13 @@ url: "https://kimhyojin.github.io"
 # Secondary Parameters
 header-img: img/home-bg.jpg
 headercolor: "#FFFFFF"
-logo: img/logos/Project-Pages-New-Logo-Inverted.png
+
 
 # Tertiary Parameters
 github_username:  kimhyojin
 project_repository: project-pages
 disqus_shortname: project-pages
-g-analytics: 
+g-analytics:
 altmetric: true
 
 # Build settings
@@ -40,7 +40,7 @@ defaults:
 # Prose Settings
 prose:
   ignore: ['feed.xml', '/stl', '/ply', '/js', '/plugin', '/lib', '/projectors', '_layouts', '/_includes', 'Gruntfile.js', 'package.json', 'proselinks.jsonp', 'ppanchor.matin', '.gitignore', '/search', '/css', '/img', 'favicon.png','_data/*.json','LICENSES.md','README.md','colorscheme.scss','members.html','mentions.html','index.html']
-  siteurl: 'http://kimhyojin.github.io/project-pages/'
+  siteurl: 'http://kimhyojin.github.io'
   ispp: true
   media: 'img'
   metadata:
@@ -59,7 +59,7 @@ prose:
         field:
           element: "text"
           label: "Project"
-          value: ""           
+          value: ""
     _posts:
       - name: "subtitle"
         field:
@@ -101,7 +101,7 @@ prose:
         field:
           element: "text"
           label: "Project"
-          value: ""    
+          value: ""
       - name: "horizontal"
         field:
           element: "hidden"
@@ -125,13 +125,13 @@ prose:
             - name: "Blood"
               value: "blood"
             - name: "Moon"
-              value: "moon"          
+              value: "moon"
             - name: "Night"
               value: "night"
             - name: "Sky"
               value: "sky"
             - name: "Solarized"
-              value: "solarized"             
+              value: "solarized"
       - name: "trans"
         field:
           element: "select"
@@ -143,13 +143,13 @@ prose:
             - name: "Page"
               value: "page"
             - name: "Concave"
-              value: "concave"          
+              value: "concave"
             - name: "Linear"
               value: "linear"
             - name: "Fade"
               value: "fade"
             - name: "None"
-              value: "none"             
+              value: "none"
       - name: "visualworkflow"
         field:
           element: "checkbox"

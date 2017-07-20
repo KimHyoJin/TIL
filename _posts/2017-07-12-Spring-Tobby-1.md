@@ -1,97 +1,87 @@
 ---
 layout: post
-title:  "Spring (2)"
+title:  "토비의 스프링 1장"
 date:   2017-07-13 04:00
 category: Blog
-tags: 		spring 
+tags: 		spring
 ---
-# 토비의 스프링 1장         
 
-##### 인터페이스와 상속
-어떤 프로그램을 개발 했을 때, 변화에 대응할 수 있게 개발을 하려면 중복코드를 줄여야한다. 예를 들어 add()라는 메소드를 sub()로 수정하려할 때 add를 호출하는 부분을 전부 sub()로 수정해주어야한다. 최소한의 변경이 필요하다.
+스프링의 시작은 다음과 같다 : 어떻게 변화에 대응하는 코드를 짤 것인가?
+(지금까지 개발해본 소규모 시스템에서 생각하는 것이 아닌 대규모 시스템을 생각해보아야한다. 변화에 대응할 수 있는 코드가 더욱 더 효율적인 것은 분명하다)
+변화에 대응하는 코드를 위해서는 관심사가 분리되어야한다.
 
-따라서 분리와 확장이 필요하다. 분리는 공통된 주제(관심사)들끼리 묶는 것이다. 그리고 스프링의 기본 철학은 이를 용이하게하는것이다. 그러기 위해서는 주제간의 dynamic하고 유연한 관계가 설정되어야한다.
+### 관심사의 분리
+관심사의 분리란 관심(기능)별로 응축하고 이를 느슨하게 잇는 것이다. 즉, 관련된것끼리는 응집도를 높이고, 결합도는 낮추는 것이다. 책에서는 다음의 예시를 든다. 예를 들어 DB를 연결하는 connection 코드를 짤 때, Aconnection과 Bconnection, Cconnection이 있고 이를 상황에 따라 바꾸고자 한다면, connection에 해당하는 부분만 분리하여 변경하는 것이 편할 것이다. 이것이 관심사의 분리다
 
-그럼 예를 들어 고양이를 키운다고 할 때, 모모를 키우는 것과 무무를 키우는 것 두가지가 있지만, 둘에게 하는 행동의 포맷은 비슷하다. 대신 무무는 장이 안좋아서 밥에 유산균을 타먹여야한다. 모모는 털이 많이 날려서 빗질을 무무의 100배 해줘야한다. 샤워도 모모가 무무보다 자주해야한다. 대신 무무는 엉덩이를 매일 확인해줘야한다. 이렇게 세부적인 내용은 다르지만, 밥을 먹이고 씻기고 빗질해주는 것은 같다. 내가 모모를 키우다가 무무를 키우려면 어떻게 해야할까?
+그렇다면 어떻게 분리할 수 있을 까?
 
-분리와 확장을 고려한다면, 첫번째 방법으로 상속이 있을 것이다. 구현해야할 밥먹이기, 빗질, 샤워 메소드를 정의해두고 이를 상속받아서 모모클래스, 무무클래스에서 구현하면 된다. 좋은 방법인것 같다! 대신 문제가 있다. 그럼 내가 모모를 생성할 때 어떻게 해야할까?
-```java
-Momo momo = new Momo();
-```
-이런식으로 모모를 불러와야할 것이다. 이미 내가 new Momo();를 사용한 시점에서 모모를 키우는 것을 확정했으므로, 무무를 키울려면 이를 바꾸어야한다. 또한 다중상속의 문제가 있다. 고양이 분양받는 것/고양이를 기르는 것/고양이가 죽는 것이 각각 다른 abstract로 구현되어있다면 이 3개를 동시에 상속받을 수 없다(예제 좀 억지인듯..) 고양이를 분양받고 그 고양이를 기를 수 없다!
-두번째 방법은 인터페이스가 있을 것이다. 고양이 인터페이스를 만들어두면 다중상속은 해결할 수 있다. 그러나 앞서 말한 선언의 문제가 또 발생한다.
-
-##### 그래서 DI
-그래서 의존성 주입이 나왔다. 내가 키우는 고양이를 주는 것이다! 다음과 같이 구현하는 것이다. (편의상 하나의 파일에 다 쓴다..)
-```java
-// cat interface
-public interface CatRaise{
-  public void feed();
-  public void brushing();
-  public void shower();
-}
-
-public class Momo implements CatRaise{
-  public void feed(){
-    //eat dryfood;
-  }
-  ...(생략)
-}
-
-public class Mumu implements CatRaise{
-  public void feed(){
-    //eat rawfood + lactobacillus;
-  }
-  ...(생략)
-}
-
-public class Hyojin{
-  // hyojin's cat
-  private CatRaise catraise;
-
-  public Hyojin(CatRaise catraise){
-    this.catraise = catraise;
-  }
-}
-
-```
-이게 생성자를 사용한 방법이다. 또 setter를 사용할수도 있다.
-```java
-public class Hyojin{
-  // hyojin's cat
-  private CatRaise catraise;
-
-  public setCatRaise(CatRaise catraise){
-    this.catraise = catraise;
+### 상속
+connection을 사용하는
+``` java
+public class UseConnection{
+  public void use(){
+    Aconnection aconnection = new Aconnection();
+    aconnection.getConnection();
   }
 }
 ```
-그럼 여기에 어떻게 생성한 bean을 넣어줄 수 있을까?
-첫번째로 xml을 사용할 수 있다.
-```xml
-<bean id="hyojincat" class="com.example.Mumu">
-```
-이렇게 등록 후
-```java
-CatRaise catraise = applicationContext.getBean("hyojincat");
-```
-으로 가져올 수 있다.
+이 존재한다고 하자. 이 때 위에서 말한것처럼 관심사의 분리를 하려면 어떻게 해야할까? 가장 첫번째로 상속을 생각할 수 있다. 상속을 통해 Aconnection도, Bconnection도 동일 메소드를 사용하게 하는 것이다.
 
-혹은 @을 사용할수도 있다!(Java Config)
-```java
+``` java
+public abstract Connection{
+  public abstract int getConnection();
+}
 
-@Bean
-public class Mumu implements CatRaise{
-  public void feed(){
-    //eat rawfood + lactobacillus;
+public class Aconnection extends Connection{
+  public int getConnection(){
+
   }
-  ...(생략)
 }
 
-public class Hyojin{
-  // hyojin's cat
-  @Autowired
-  private CatRaise catraise;
+public class Bconnection extends Connection{
+  public int getConnection(){
+
+  }
 }
 ```
-xml로만 하는 방법도 있는데 추가해서 넣을 것.
+그러나 문제점이 있다. 우선 상속은 다중상속이 안된다. 이는 큰 제약이다
+
+
+### 아예 클래스를 새로 만들자
+``` java
+public Class Aconnection{
+  public int getConnection(){
+    ...
+  }
+}
+
+public class UseConnection{
+  public void use(){
+    Aconnection aconnection = new Aconnection();
+    aconnection.getConnection();
+  }
+}
+```
+그러나 Bconnection을 쓰려면 UseConnection의 해당 부분을 수정해야한다. UseConnection이 Bconenction을 직접 사용한다.
+
+### 인터페이스
+인터페이스를 쓰면 이렇게 할 수 있다.
+``` java
+public interface Connection{
+  public int getConnection();
+}
+
+public Class Aconnection implements Connection{
+  public int getConnection(){
+    ...
+  }
+}
+
+public class UseConnection{
+  public void use(){
+    Aconnection aconnection = new Aconnection();
+    aconnection.getConnection();
+  }
+}
+```
+그래도 여전히 Aconnection을 사용한다. 그 이유는 어떤 connection을 사용할지를 UseConnection에서 결정하기 때문이다(=분리가 제대로 안됨)
