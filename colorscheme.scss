@@ -6,6 +6,8 @@ $header-color: {{ site.headercolor }};
 .intro-header .post-heading,
 .intro-header .page-heading {
   color: $header-color;
+  align-content: center;
+  text-align: center;
 }
 
 hr.small {
