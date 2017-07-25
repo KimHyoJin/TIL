@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
 .intro-header .site-heading,
 .intro-header .post-heading,
 .intro-header .page-heading {
@@ -5,7 +7,7 @@
   color: #FFFFFF;
 }
 body {
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: "Nanum Gothic", 'Lora', 'Times New Roman', serif;
   font-size: 20px;
   color: #404040;
 }
@@ -139,6 +141,7 @@ hr.small {
 }
 .intro-header {
   background-color: #808080;
+  height: 400px;
   background: no-repeat center center;
   background-attachment: scroll;
   -webkit-background-size: cover;
@@ -175,7 +178,8 @@ hr.small {
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
-    font-size: 80px;
+    font-size: 50px;
+    align-content: center;
   }
 }
 .intro-header .post-heading h1 {
