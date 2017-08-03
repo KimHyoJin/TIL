@@ -74,6 +74,7 @@ html {
 
 /* Sidebar links */
 .sidebar a {
+  font-family: 'Nanum Gothic';
   color: #fff;
 }
 
