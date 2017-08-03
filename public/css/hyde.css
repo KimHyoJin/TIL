@@ -183,9 +183,11 @@ a.sidebar-nav-item:focus {
 /* Red */
 .theme-base-08 .sidebar {
   background-color: #ac4142;
+  font-family: 'Nanum Gothic';
 }
 .theme-base-08 .content a,
 .theme-base-08 .related-posts li a:hover {
+  font-family: 'Nanum Gothic';
   color: #ac4142;
 }
 
