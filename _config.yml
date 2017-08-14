@@ -3,6 +3,9 @@ gems:
   - jekyll-paginate
   - jekyll-gist
   - redcarpet
+  - pygments.rb
+  - jekyll
+
 
 markdown:         redcarpet
 highlighter:      pygments
