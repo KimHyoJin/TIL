@@ -10,8 +10,8 @@ permalink:        pretty
 
 # Setup
 title:            효징
-tagline:          'A Jekyll theme'
-description:      '매일 의미있는 포스팅을 한개씩'
+tagline:          '블로그'
+description:      '매일 의미있는</br>포스팅을 한개씩'
 url:
 baseurl:          /
 
