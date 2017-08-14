@@ -1,28 +1,22 @@
-# Gems
-gems:
-  - jekyll-paginate
-  - jekyll-gist
-  - redcarpet
-  - pygments.rb
-  - jekyll
 
+gems: [jekyll-paginate, jekyll-gist, redcarpet, pygments.rb, jekyll]
 
+# Dependencies
 markdown:         redcarpet
 highlighter:      pygments
 
 # Permalinks
 permalink:        pretty
-relative_permalinks: true
 
 # Setup
 title:            효징
 tagline:          'A Jekyll theme'
-description:      '매일 한개라도</br>의미있는 포스트를'
-url:              https://KimHyoJin/kimhyojin.github.io
+description:      '매일 의미있는 포스팅을 한개씩'
+url:
 baseurl:          /
 
 author:
-  name:           'Kim Hyo Jin'
+  name:           'Mark Otto'
   url:            https://twitter.com/mdo
 
 paginate:         5
@@ -31,4 +25,4 @@ paginate:         5
 version:          2.1.0
 
 github:
-  repo:           https://github.com/kimhyojin
+  repo:           https://github.com/KimHyoJin
