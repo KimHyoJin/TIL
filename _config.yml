@@ -4,12 +4,12 @@ gems:
   - jekyll-gist
   - redcarpet
 
-markdown:         kramdown
-highlighter:      rouge
+markdown:         redcarpet
+highlighter:      pygments
 
 # Permalinks
 permalink:        pretty
-# relative_permalinks: true
+relative_permalinks: true
 
 # Setup
 title:            효징
