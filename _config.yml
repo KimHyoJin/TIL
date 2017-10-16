@@ -1,28 +1,37 @@
-
-gems: [jekyll-paginate, jekyll-gist, redcarpet, pygments.rb, jekyll]
-
 # Dependencies
-markdown:         redcarpet
-highlighter:      pygments
-
-# Permalinks
-permalink:        pretty
+markdown:         kramdown
+highlighter:      rouge
 
 # Setup
 title:            효징
-tagline:          '블로그'
-description:      '매일 의미있는</br>포스팅을 한개씩'
-url:
-baseurl:          /
+tagline:          'Jekyll'
+description:      '효징의 블로그입니다'
+url:              https://kimhyojin.github.io/
+baseurl:          # the optional subpath of your site, e.g. "/blog"
+                  # NB: This applies to all pages in your Jekyll site.
+                  # If you want to move just the blog index pages but keep
+                  # other pages at root, see the paginate_path and
+                  # sidebar_blog_link below.
 
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+  name:           'Hyojin Kim'
+  url:            https://www.facebook.com/profile.php?id=100021849889334
 
 paginate:         5
+# paginate_path:    '/page:num'
+                    # Or '/blog/page:num' if you want to move your index pages
+
+plugins:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
 
 # Custom vars
-version:          2.1.0
-
+version:            3.4.1
+sidebar_home_link:  true
+# sidebar_blog_link:  '/blog'   # By default, your home page is your blog
+                                # page. If you change your paginate_path,
+                                # set this to the root of the paginate_path
+                                # to enable a separate blog link.
 github:
-  repo:           https://github.com/KimHyoJin
+  repo:             https://github.com/KimHyoJin
