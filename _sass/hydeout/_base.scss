@@ -1,6 +1,7 @@
 // Body resets
 //
 // Update the foundational and global aspects of the page.
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 * {
   -webkit-box-sizing: border-box;
@@ -15,7 +16,8 @@ body {
 }
 
 html {
-  font-family: $root-font-family;
+  //font-family: $root-font-family;
+  font-family: "Nanum Gothic";
   font-size: $root-font-size;
   line-height: $root-line-height;
 
